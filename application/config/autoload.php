@@ -134,4 +134,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('login/m_login', 'entidades/m_entidade', 'entidades/m_log', 'm_constantes', 'entidades/m_perfil_controlador');
+$autoload['model'] = array('login/m_login', 'entidades/m_entidade', 'entidades/m_log', 'm_constantes');
