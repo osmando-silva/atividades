@@ -1,0 +1,64 @@
+
+
+    .golden-forms input{
+	margin:0;
+	outline:0;
+	font-size:1em;	
+	line-height: normal;
+    font-family:Helvetica, Arial, sans-serif;
+	font-style:normal;  
+	vertical-align:baseline;
+	*vertical-align:middle;
+}
+
+.golden-forms input[placeholder] { color:#999; }
+
+
+.golden-forms .input
+{  
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width:60%;	
+  vertical-align: top;
+}
+
+.golden-forms .input, 
+.golden-forms .textarea{
+    height:36px;
+    color: #333;
+    padding: 0 10px;
+    background:#fff;
+    border: 1px solid;
+    border-color:#bbb;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition:all 0.5s ease-in-out;	
+    border-radius: 3px;
+} 
+
+.golden-forms .input:focus, 
+.golden-forms .textarea:focus{
+ 	border-color: #6BACED;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.15), 0 0 8px rgba(82,168,236,.7);
+  	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.15), 0 0 8px rgba(82,168,236,.7);
+  	box-shadow: inset 0 1px 1px rgba(0,0,0,.15), 0 0 8px rgba(82,168,236,.7);
+} 
+
+
+/* textarea resizeble 
+-------------------------------- */
+.golden-forms .textarea{ 	 
+	padding:10px; 
+	overflow: auto; 
+	line-height:20px;
+	min-height:140px;
+	max-width:100%; 
+	resize:vertical;
+}
+
+.golden-forms .textarea.mini{ min-height:110px; }
+.golden-forms .textarea.auto { height: auto!important; }
+.golden-forms .textarea.no-resize { resize: none;  }
+

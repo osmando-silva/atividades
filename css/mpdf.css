@@ -1,0 +1,53 @@
+
+/*table {
+	font-family: "Verdana";
+	color: #40454b;
+	font-size: 10px;
+}*/
+
+.noprint { display: none !important; }
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+/*table { page-break-inside:auto }
+tr    { page-break-inside:avoid; page-break-after:auto }*/
+
+td {
+    vertical-align: top;
+}
+
+.texto{
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.data{
+    vertical-align: middle;    
+}
+
+.centralizado{
+    text-align: center;
+}
+
+.esquerda{
+    text-align: left;
+}
+
+.justificado{
+    text-align: justify;
+}
+
+.validacao{
+    width: 95%; 
+    font-size: 9pt;
+}
+
+.sem_bordas{
+    
+}
