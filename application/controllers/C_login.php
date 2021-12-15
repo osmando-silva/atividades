@@ -10,7 +10,7 @@ class C_login extends S_Controller {
     
     public function index(){
         
-        $seq = rand(1000000,9999999); // Cria uma sequencia aleatoria com 7 caracteres
+        $seq = rand(1000000,9999999); // Cria uma sequencia aleatoria com 7 caracteres, que serao usados para encriptar o login e a senha.
         
         $this->session->set_userdata('seq', $seq); // Seta a variavel de sessao com a sequencia criada
         
