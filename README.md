@@ -43,7 +43,7 @@ Ferramentas utilizadas no sistema:
 
 Características do sistema:
 
-- Está protegido por um login;
+- Está protegido por um login (CPF). Não há verificação do CPF. Qualquer sequência de 11 números poderá ser usada;
 - Todas as telas do sistema só podem ser acessadas por usuários que estejam logados;
 - As senhas dos usuários são armazenadas em banco de dados, de forma segura, usando hash bcrypt;
 - Os usuários são vinculados a perfis, podendo ser mais de um, os quais permitem o acesso às áreas do sistama:
@@ -51,7 +51,7 @@ Características do sistema:
     - o perfil administrador dará acesso, além da área de gerenciamento de atividades, às áreas de gerenciamento de usuários, de tipos de atividades e de registros do sistema (logs);
 
 - A área de gerenciamento de atividades permite:
-    - adicionar novas atividades contendo um título, descrição e tipo;
+    - Adicionar novas atividades contendo um título, descrição e tipo;
     - Listar as atividades em aberto;
     - Marcar e desmarcar as atividades como concluídas;
     - Listar as atividades concluídas;
@@ -62,3 +62,9 @@ Características do sistema:
     - Atividades de atendimento e manutenção urgentes não podem ser finalizadas se a descrição estiver preenchida com menos de 50 caracteres;
     - Manutenções urgentes  só podem ser cadastradas de segunda-feira a quinta-feira, em qualquer horário, e na sexta-feira até às 12:59 horas.
 
+- A área de gerenciamento de usuários permite:
+    - Cadastrar novos usuários. Ao ser cadastrado, a senha do usuário será o seu próprio login. No primeiro acesso o sistema irá solicitar a troca da senha;
+    - Editar os dados;
+    - Atribuir perfis;
+    - Resetar a senha, que, depois de resetada, será o seu próprio login;
+    - Desativar/Ativar usuários. Usuários desativados não poderão fazer logon no sistema;;
