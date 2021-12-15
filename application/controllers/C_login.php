@@ -10,33 +10,44 @@ class C_login extends S_Controller {
     
     public function index(){
         
-        $seq = rand(1000000,9999999);
+        $seq = rand(1000000,9999999); // Cria uma sequencia aleatoria com 7 caracteres
         
-        $this->session->set_userdata('seq', $seq);
+        $this->session->set_userdata('seq', $seq); // Seta a variavel de sessao com a sequencia criada
         
-        $this->session->set_flashdata('logout', '1');
+        $this->session->set_flashdata('logout', '1'); // Seta a variavel de sessao logout com 1
+        
+        /* Cria um array a ser passado para a view (tela) de login.
+         * Os indices dos arrays serao transformados em variaveis na view de login, com os seus respectivos valores
+         */
         $data['login'] = $this->session->userdata('login');
         $data['senha'] = '';
         $data['seq'] = $seq;
                 
-        $this->template->showLogin('login/v_login', $data);
+        $this->template->showLogin('login/v_login', $data); // Aciona a library Template, que carrega o topo, o meio e o rodape da pagina
         
     }
     
+    /* Metodo chamado quando o usario aciona o botao entrar na tela de login
+     * Faz toda a verificacao dos dados do usuario e habilita ou nao o acesso.
+     */
     public function validate(){
         
-        $this->load->model('entidades/m_usuario');
-        $this->load->library('Encryption');
+        $this->load->model('entidades/m_usuario'); // Carrega o model de usuarios
+        $this->load->library('Encryption'); // Carrega a biblioteca para decriptar o login e a senha
         
-        $seq = $this->session->userdata('seq');
-        $codseguranca = $this->input->post('codseguranca');
+        $seq = $this->session->userdata('seq'); // Variavel de sessao com a sequencia aleatoria
+        $codseguranca = $this->input->post('codseguranca'); // Variavel do POST com o codigo de seguranca (captcha)
         
         $encryption = new Encryption();
         
-        $login = $encryption->decrypt($this->input->post('hashLogin'), $seq);
+        $login = $encryption->decrypt($this->input->post('hashLogin'), $seq); // decripta o login
         
-        $senha = $encryption->decrypt($this->input->post('hash'), $seq);
-
+        $senha = $encryption->decrypt($this->input->post('hash'), $seq); // decripta a senha
+        
+        /* Verifica se o codigo de seguranca do POST eh igual ao da variavel de sessao.
+         * Se forem diferentes, o usuario serah redirecionado para a tela de login.
+         * O arquivo atividades.js trata esse codigo e mostra uma mensagem.
+        */
         if ($codseguranca != $this->session->userdata('autenticacao')){
             
             $this->session->set_flashdata('codSeg',(bool)TRUE);
@@ -74,7 +85,7 @@ class C_login extends S_Controller {
                 $this->session->unset_userdata('seq');
                 redirect();
 
-            }else{
+            }else{ // Login bem sucedido
         
                 $this->session->set_userdata('login', $login);
                 $this->session->set_userdata('usuarioCodigo', $dadosUsuario->CODIGO);
@@ -117,11 +128,11 @@ class C_login extends S_Controller {
         
         $this->m_login->apagaRelatorios($this->session->userdata('usuarioCodigo'));
             
-        $this->m_log->gravaLog(utf8_encode('Sess„o expirou'), $this->session->userdata('usuarioCodigo'));
+        $this->m_log->gravaLog(utf8_encode('Sess√£o expirou'), $this->session->userdata('usuarioCodigo'));
     
         $this->session->sess_destroy();
         
-        echo 'A sess„o expirou.';
+        echo 'A sess√£o expirou.';
         
     }
 
