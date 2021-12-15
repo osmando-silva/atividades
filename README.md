@@ -32,10 +32,10 @@ Instalação (Linux derivado do Debian):
 
 Ferramentas utilizadas no sistema:
 
-- framework PHP CodeIgniter, versão 3.0;
-- bootstrap v4.0.0 e Jquery UI v1.10.4;
-- jQuery JavaScript Library v3.5.1
-- Bibliotecas JavaScript (jQuery) DataTable, Validate e inputmask.bundle
+- Framework PHP CodeIgniter, versão 3.0;
+- Bootstrap v4.0.0 e Jquery UI v1.10.4;
+- JQuery JavaScript Library v3.5.1;
+- Bibliotecas JavaScript (jQuery) DataTable, Validate e inputmask.bundle;
 - Font Awesome 4.4.0;
 - Bibliotecas MPDF 6.0 e Encryption;
 
@@ -43,4 +43,22 @@ Ferramentas utilizadas no sistema:
 
 Características do sistema:
 
-- 
+- Está protegido por um login;
+- Todas as telas do sistema só podem ser acessadas por usuários que estejam logados;
+- As senhas dos usuários são armazenadas em banco de dados, de forma segura, usando hash bcrypt;
+- Os usuários são vinculados a perfis, podendo ser mais de um, os quais permitem o acesso às áreas do sistama:
+    - o perfil usuário (padrão) dará acesso apenas à área de gerenciamento de atividades;
+    - o perfil administrador dará acesso, além da área de gerenciamento de atividades, às áreas de gerenciamento de usuários, de tipos de atividades e de registros do sistema (logs);
+
+- A área de gerenciamento de atividades permite:
+    - adicionar novas atividades contendo um título, descrição e tipo;
+    - Listar as atividades em aberto;
+    - Marcar e desmarcar as atividades como concluídas;
+    - Listar as atividades concluídas;
+    - Editar o título, descrição e tipo de uma atividade;
+    - Remover uma atividade;
+    - Os tipos de atividades podem ser: Desenvolvimento, Atendimento, Manutenção e Manutenção urgente;
+    - Atividades de manutenção urgente não podem ser removidas, apenas finalizadas;
+    - Atividades de atendimento e manutenção urgentes não podem ser finalizadas se a descrição estiver preenchida com menos de 50 caracteres;
+    - Manutenções urgentes  só podem ser cadastradas de segunda-feira a quinta-feira, em qualquer horário, e na sexta-feira até às 12:59 horas.
+
