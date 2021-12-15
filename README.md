@@ -1,11 +1,11 @@
 # atividades
 Sistema de controle de atividades
 
-Requisitos do sistema operacional:
+Requisitos do sistema:
 
-- Apache 2.4.41, com módulo rewrite ativado
-- PHP 7.1 ou superior, com extensões mysql, gd, mbstring, mcrypt
-- Mysql 8.0.27, Charset UTF-8 Unicode
+- Apache 2.4.41, com módulo rewrite ativado;
+- PHP 7.1 ou superior, com extensões mysql, gd, mbstring, mcrypt;
+- Mysql 8.0.27, Charset UTF-8 Unicode;
 
 
 Instalação (Linux derivado do Debian):
@@ -30,6 +30,17 @@ Instalação (Linux derivado do Debian):
     </Directory>
     
 
-Requisitos do sistema:
+Ferramentas utilizadas no sistema:
+
+- framework PHP CodeIgniter, versão 3.0;
+- bootstrap v4.0.0 e Jquery UI v1.10.4;
+- jQuery JavaScript Library v3.5.1
+- Bibliotecas JavaScript (jQuery) DataTable, Validate e inputmask.bundle
+- Font Awesome 4.4.0;
+- Bibliotecas MPDF 6.0 e Encryption;
+
+
+
+Características do sistema:
 
 - 
