@@ -1,4 +1,5 @@
-# atividades
+# Atividades
+
 Sistema de controle de atividades
 
 Requisitos do sistema:
