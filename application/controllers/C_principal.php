@@ -6,6 +6,11 @@ class C_principal extends S_Controller {
         
         parent::__construct();
         
+        /* Verifica se a varavel de sessao codSeg foi setada. Caso positivo, a varavel de sessao erroLogin eh setada com 5, 
+         * indicando que o codigo de seguraca estah incorreto.
+         * O arquivo atividades.js trata esse codigo e mostra uma mensagem.
+         * O usuario serah redirecionado para a tela de login.
+         */
         if($this->session->flashdata('codSeg')){
             
             $this->session->set_flashdata('erroLogin', '5');
@@ -13,6 +18,11 @@ class C_principal extends S_Controller {
     
         }
         
+        /* Verifica se a varavel de sessao inexistente foi setada. Caso positivo, a varavel de sessao erroLogin eh setada com 4, 
+         * indicando que o usuario (login) nao existe no banco de dados.
+         * O arquivo atividades.js trata esse codigo e mostra uma mensagem.
+         * O usuario serah redirecionado para a tela de login.
+         */
         if($this->session->flashdata('inexistente')){
             
             $this->session->set_flashdata('erroLogin', '4');
@@ -20,6 +30,11 @@ class C_principal extends S_Controller {
     
         }
         
+        /* Verifica se a varavel de sessao desativado foi setada. Caso positivo, a varavel de sessao erroLogin eh setada com 3, 
+         * indicando que o usuario (login) existe no banco de dados, mas estah desativado.
+         * O arquivo atividades.js trata esse codigo e mostra uma mensagem.
+         * O usuario serah redirecionado para a tela de login.
+         */
         if($this->session->flashdata('desativado')){
             
             $this->session->set_flashdata('erroLogin', '3');
@@ -27,6 +42,11 @@ class C_principal extends S_Controller {
     
         }
         
+        /* Verifica se a varavel de sessao erroLogin foi setada. Caso positivo, a varavel de sessao erroLogin eh setada com 1, 
+         * indicando que houve erro no login ou na senha.
+         * O arquivo atividades.js trata esse codigo e mostra uma mensagem.
+         * O usuario serah redirecionado para a tela de login.
+         */
         if($this->session->flashdata('erroLogin')){
             
             $this->session->set_flashdata('erroLogin', '1');
@@ -34,6 +54,10 @@ class C_principal extends S_Controller {
     
         }
         
+        /* Verifica se a varavel de sessao primeiroAcesso foi setada. Caso positivo, a varavel de sessao erroSenha eh setada com 4, e a alterarSenha com TRUE,
+         * indicando que eh o primeiro acesso do usuario.
+         * O arquivo atividades.js trata esse codigo e o usuario serah redirecionado para a tela de alterar a senha.
+         */
         if($this->session->flashdata('primeiroAcesso')){
             
             $this->session->set_flashdata('erroSenha', '4');
@@ -42,12 +66,17 @@ class C_principal extends S_Controller {
             
         }
         
+        /* Verifica se a varavel de sessao senhasNaoConferem foi setada. Caso positivo, a varavel de sessao erroSenha eh setada com 1, e a alterarSenha com TRUE,
+         * indicando que as novas senhas nao conferem.
+         * O arquivo atividades.js trata esse codigo, mostra uma mensagem e o usuario serah redirecionado para a tela de alterar a senha.
+         * De forma similar, se uma das outras varaveis de sessao relativas a troca de senha for setada, serah mostrada uma mensagem correspondente.
+         */
         if($this->session->flashdata('senhasNaoConferem')){
             
             $this->session->set_flashdata('erroSenha', '1');
             $this->session->set_flashdata('alterarSenha',(bool)TRUE);
             redirect('senha'); 
-    
+            
         }elseif ($this->session->flashdata('senhaCurta')) {
             
             $this->session->set_flashdata('erroSenha', '6');
@@ -92,6 +121,9 @@ class C_principal extends S_Controller {
             
         }
         
+        /* Verifica se a varavel de sessao logado foi setada. Caso positivo, o logon foi bem sucedido, e o usuario serah 
+         * redirecionado para a tela inicial do sistema, que eh a de gerenciamento de atividades.
+         */
         if(!$this->session->userdata('logado')){
             
             redirect('entrar'); 
@@ -138,7 +170,7 @@ class C_principal extends S_Controller {
                         
         $this->session->set_userdata('menus', $this->m_login->montaMenus($perfilCodigos));
         
-        // Verifica o Usuário logado
+        // Verifica o UsuÃ¡rio logado
         if (in_array(M_constantes::Administrador, $perfilCodigos)){
             
             $this->session->set_userdata('tema', 'azul/');
