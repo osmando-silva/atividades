@@ -1,7 +1,7 @@
 <?php
-if (!defined('BASEPATH')){ exit('Acesso direto ao arquivo n„o autorizado, log gerado!');}
+if (!defined('BASEPATH')){ exit('Acesso direto ao arquivo n√£o autorizado, log gerado!');}
 
-// montar tÌtulo da p·gina
+// montar t√≠tulo da p√°gina
 echo heading($pagina_titulo, 2, 'id="titulo_pagina"');
 
 ?>
@@ -12,7 +12,7 @@ echo heading($pagina_titulo, 2, 'id="titulo_pagina"');
     
     <div align="center">
         
-        <button type="button" class="ui-state-default ui-corner-all" id="novo_usuario"><i class="fa fa-user"></i> Novo Usu·rio</button>
+        <button type="button" class="ui-state-default ui-corner-all" id="novo_usuario"><i class="fa fa-user"></i> Novo Usu√°rio</button>
                 
         <input type="hidden" id="codigo" value="" />
                             
@@ -30,7 +30,7 @@ echo heading($pagina_titulo, 2, 'id="titulo_pagina"');
                     <th>NOME</th>
                     <th>CONTATO</th>
                     <th>E-MAIL</th>
-                    <th>OP«’ES</th>
+                    <th>OP√á√ïES</th>
                     
                 </tr>
                 
@@ -48,7 +48,7 @@ echo heading($pagina_titulo, 2, 'id="titulo_pagina"');
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">Novo Usu·rio</h5>
+        <h5 class="modal-title" id="ModalLabel">Novo Usu√°rio</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -63,7 +63,7 @@ echo heading($pagina_titulo, 2, 'id="titulo_pagina"');
 </div>
 
 <div class="modal fade" id="janelaPerfisUsuario" tabindex="1" role="dialog" aria-labelledby="PerfisUsuario" aria-hidden="true">
-  <div style="width: 35%; height: 35%; max-width: none; top: 20%;" class="modal-dialog" role="document">
+  <div style="width: 50%; height: 35%; max-width: none; top: 20%;" class="modal-dialog" role="document">
     <div style="height: 100%; border-radius: 0;" class="modal-content">
       <div class="modal-header alert alert-primary">
         <h5 class="modal-title" id="PerfisUsuario"></h5>
