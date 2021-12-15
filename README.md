@@ -68,3 +68,13 @@ Características do sistema:
     - Atribuir perfis;
     - Resetar a senha, que, depois de resetada, será o seu próprio login;
     - Desativar/Ativar usuários. Usuários desativados não poderão fazer logon no sistema;;
+
+- A área de gerenciamento de tipos de atividades permite:
+    - Cadastrar novos tipos de atividades;
+    - Editar os dados;
+    - Excluir tipos de atividades;
+
+- A área de gerenciamento de registros do sistema (logs) permite:
+    - Consultar e imprimir os registros (logs), podendo filtar por ano, usuário e período;
+    - Todas as ações que modificam dados no sistema são registradas;
+
