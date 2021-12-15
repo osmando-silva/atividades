@@ -30,7 +30,7 @@ Instalação (Linux derivado do Debian):
 
     </Directory>
     
-- O sistema poderá ser acessado em http://localhost/atividades;    
+- Isso fará com que não seja necessário usar o index.php na URL. O sistema poderá ser acessado em http://localhost/atividades;    
     
 
 Ferramentas utilizadas no sistema:
