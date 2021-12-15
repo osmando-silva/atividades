@@ -52,15 +52,15 @@ Características do sistema:
 
 - A área de gerenciamento de atividades permite:
     - Adicionar novas atividades contendo um título, descrição e tipo;
-    - Listar as atividades em aberto;
+    - Listar e imprimir as atividades em aberto;
     - Marcar e desmarcar as atividades como concluídas;
-    - Listar as atividades concluídas;
+    - Listar e imprimir as atividades concluídas;
     - Editar o título, descrição e tipo de uma atividade;
     - Remover uma atividade;
     - Os tipos de atividades podem ser: Desenvolvimento, Atendimento, Manutenção e Manutenção urgente;
     - Atividades de manutenção urgente não podem ser removidas, apenas finalizadas;
     - Atividades de atendimento e manutenção urgentes não podem ser finalizadas se a descrição estiver preenchida com menos de 50 caracteres;
-    - Manutenções urgentes  só podem ser cadastradas de segunda-feira a quinta-feira, em qualquer horário, e na sexta-feira até às 12:59 horas.
+    - Manutenções urgentes  só podem ser cadastradas (mesmo na edição ou quando reabertas) de segunda-feira a quinta-feira, em qualquer horário, e na sexta-feira até às 12:59 horas.
 
 - A área de gerenciamento de usuários permite:
     - Cadastrar novos usuários. Ao ser cadastrado, a senha do usuário será o seu próprio login. No primeiro acesso o sistema irá solicitar a troca da senha;
