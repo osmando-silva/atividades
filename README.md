@@ -30,6 +30,8 @@ Instalação (Linux derivado do Debian):
 
     </Directory>
     
+- O sistema poderá ser acessado em http://localhost/atividades;    
+    
 
 Ferramentas utilizadas no sistema:
 
@@ -44,7 +46,7 @@ Ferramentas utilizadas no sistema:
 
 Características do sistema:
 
-- Está protegido por um login (CPF). Não há verificação do CPF. Qualquer sequência de 11 números poderá ser usada;
+- Está protegido por um login (CPF). Não há verificação do CPF. Qualquer sequência de 11 números poderá ser usada. Para maior segurança, durante o logon, os dados de login e de senha são criptografados;
 - Todas as telas do sistema só podem ser acessadas por usuários que estejam logados;
 - As senhas dos usuários são armazenadas em banco de dados, de forma segura, usando hash bcrypt;
 - Os usuários são vinculados a perfis, podendo ser mais de um, os quais permitem o acesso às áreas do sistama:
@@ -64,7 +66,7 @@ Características do sistema:
     - Manutenções urgentes  só podem ser cadastradas (mesmo na edição ou quando reabertas) de segunda-feira a quinta-feira, em qualquer horário, e na sexta-feira até às 12:59 horas.
 
 - A área de gerenciamento de usuários permite:
-    - Cadastrar novos usuários. Ao ser cadastrado, a senha do usuário será o seu próprio login. No primeiro acesso o sistema irá solicitar a troca da senha;
+    - Cadastrar novos usuários. Ao ser cadastrado, a senha do usuário será o seu próprio login. No primeiro acesso o sistema irá solicitar a troca da senha, que deverá ter, no mínimo, 8 caracteres, uma letra maiúscula, uma minúscula e um número;
     - Editar os dados;
     - Atribuir perfis;
     - Resetar a senha, que, depois de resetada, será o seu próprio login;
