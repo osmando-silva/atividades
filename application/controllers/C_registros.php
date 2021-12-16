@@ -63,7 +63,7 @@ class C_registros extends S_Controller {
 
         }
         
-        $usuarioCombo = '<option value="" selected>Responsável - Todos</option>';
+        $usuarioCombo = '<option value="" selected>ResponsÃ¡vel - Todos</option>';
             
         foreach ($logs->selecionaUsuarios($ano) as $usuario){
             
@@ -138,7 +138,9 @@ class C_registros extends S_Controller {
         foreach ($logColecao as $log){
 
             $data = $log->DATA_LOG;
-            $dataLog = substr($data, 8, 2).'/'.substr($data, 5, 2).'/'.substr($data, 0, 4).' - '.substr($data, 11, 8); // dia/mês/ANO - H:m:s
+            $dataLog = substr($data, 8, 2).'/'.substr($data, 5, 2).'/'.substr($data, 0, 4).' - '.substr($data, 11, 8); // dia/mÃªs/ANO - H:m:s
+         
+            $dataLog .= '<br> IP: '.$log->IP_ORIGEM;
 
             $acao = utf8_decode($log->ACAO);
 
@@ -208,7 +210,9 @@ class C_registros extends S_Controller {
         foreach ($logColecao as $log){
 
             $data = $log->DATA_LOG;
-            $dataLog = substr($data, 8, 2).'/'.substr($data, 5, 2).'/'.substr($data, 0, 4).' - '.substr($data, 11, 8); // dia/mês/ANO - H:m:s
+            $dataLog = substr($data, 8, 2).'/'.substr($data, 5, 2).'/'.substr($data, 0, 4).' - '.substr($data, 11, 8); // dia/mÃªs/ANO - H:m:s
+         
+            $dataLog .= '<br> IP: '.$log->IP_ORIGEM;
 
             $acao = utf8_decode($log->ACAO);
 
@@ -251,15 +255,15 @@ class C_registros extends S_Controller {
             
         }elseif ($dataIniRel == '' && $dataFimRel != ''){
             
-            $this->atribuirDados('periodo', 'até '.$dataFimRel);
+            $this->atribuirDados('periodo', 'atÃ© '.$dataFimRel);
             
         }elseif ($dataIniRel != '' && $dataFimRel == ''){
             
-            $this->atribuirDados('periodo', 'de '.$dataIniRel.' até '.date('d/m/Y'));
+            $this->atribuirDados('periodo', 'de '.$dataIniRel.' atÃ© '.date('d/m/Y'));
             
         }else{
             
-            $this->atribuirDados('periodo', 'de '.$dataIniRel.' até '.$dataFimRel);
+            $this->atribuirDados('periodo', 'de '.$dataIniRel.' atÃ© '.$dataFimRel);
             
         }
         
